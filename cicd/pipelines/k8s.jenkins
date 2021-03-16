@@ -9,6 +9,7 @@ podTemplate(label: label,
         containers: [
                 containerTemplate(name: 'alpine', image: 'alpine:3.11', ttyEnabled: true, command: 'cat'),
         ],
+        nodeSelector: "kubernetes.io/os: linux"
         ) {
     node(label) {
         stage('Run shell') {
